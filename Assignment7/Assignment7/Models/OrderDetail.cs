@@ -12,8 +12,7 @@ namespace Assignment7.Models
         public int OrderId { get; set; }
         public int ProductId { get; set; }
 
-        // Navigation properties
-        public Product Product { get; set; }
+       public Product Product { get; set; }
         public Order Order { get; set; }
     }
 }
