@@ -21,3 +21,6 @@
 *.i*86
 *.x86_64
 *.hex
+Assignment7/Assignment7/Web.config
+Assignment7/Assignment7/Web.Release.config
+Assignment7/Assignment7/Web.Debug.config
