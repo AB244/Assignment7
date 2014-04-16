@@ -76,14 +76,14 @@
 
     <div class="float-right">
         <h2>Add New Product</h2>
-        <form id="product">
+        <form id="addProduct" data-bind="submit: create">
             @Html.ValidationSummary(true)
             <fieldset>
                 <legend>Contact</legend>
                 @Html.EditorForModel()
                 <p>
-                    <form id="addProduct" data-bind="submit: create">
-</p>
+                    <input type="submit" value="Save" />
+                </p>
             </fieldset>
         </form>
     </div>
