@@ -16,6 +16,9 @@ namespace Assignment7
     {
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(
+new Assignment7.Models.OrdersContextInitializer());
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
@@ -24,8 +27,7 @@ namespace Assignment7
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            System.Data.Entity.Database.SetInitializer(
-            new Assignment7.Models.OrdersContextInitializer());
+
         }
     }
 }
