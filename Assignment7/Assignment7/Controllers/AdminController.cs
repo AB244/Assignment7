@@ -12,7 +12,6 @@ using Assignment7.Models;
 
 namespace Assignment7.Controllers
 {
-    [Authorize(Roles = "Administrator")]
     public class AdminController : ApiController
     {
         private OrdersContext db = new OrdersContext();

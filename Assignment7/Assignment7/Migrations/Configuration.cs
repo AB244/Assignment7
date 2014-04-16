@@ -5,14 +5,14 @@ namespace Assignment7.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class usersConfiguration : DbMigrationsConfiguration<Assignment7.Models.OrdersContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Assignment7.Models.UsersContext>
     {
-        public usersConfiguration()
+        public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Assignment7.Models.OrdersContext context)
+        protected override void Seed(Assignment7.Models.UsersContext context)
         {
             //  This method will be called after migrating to the latest version.
 

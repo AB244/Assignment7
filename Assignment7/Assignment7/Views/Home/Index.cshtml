@@ -89,8 +89,9 @@
         $.getJSON("api/orders", self.orders);
     }
 
-    $(document).ready(function () {
-        ko.applyBindings(new AppViewModel());
+        $(document).ready(function () {
+            var viewModel = new AppViewModel();
+            ko.applyBindings(viewModel);
     });
 
     </script>
@@ -129,7 +130,7 @@
             </tbody>
         </table>
         <input type="button" data-bind="click: createOrder" value="Create Order" />
-
+        </div>
         <div id="orders-area" class="content">
             <!-- List of orders -->
             <div class="float-left">
@@ -141,6 +142,7 @@
                         </a>
                     </li>
                 </ul>
+                </div>
 
             <!-- Order Details -->
             <div id="order-details" class="float-right" data-bind="if: details()">

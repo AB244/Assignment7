@@ -6,44 +6,40 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script type="text/javascript" src="@Url.Content("~/Scripts/knockout-2.1.0.js")"></script>
-<script type="text/javascript">
-    function ProductsViewModel() {
-        var self = this;
-        self.products = ko.observableArray();
+    <script type="text/javascript" src="@Url.Content("~/Scripts/knockout-2.0.0.js")"></script>
+    <script type="text/javascript">
+      function ProductsViewModel() {
+          var self = this;
+          self.products = ko.observableArray();
 
-        var baseUri = '@ViewBag.ApiUrl';
-        $.getJSON(baseUri, self.products);
+          var baseUri = '@ViewBag.ApiUrl';
 
-        self.create = function (formElement) {
-            // If the form data is valid, post the serialized form data to the web API.
-            $(formElement).validate();
-            if ($(formElement).valid()) {
-                $.post(baseUri, $(formElement).serialize(), null, "json")
-                    .done(function (o) {
-                        // Add the new product to the view-model.
-                        self.products.push(o);
-                    });
-            }
-        }
+          self.create = function (formElement) {
+              // If valid, post the serialized form data to the web api
+              $(formElement).validate();
+              if ($(formElement).valid()) {
+                  $.post(baseUri, $(formElement).serialize(), null, "json")
+                      .done(function (o) { self.products.push(o); });
+              }
+          }
 
-        self.update = function (product) {
-            $.ajax({ type: "PUT", url: baseUri + '/' + product.Id, data: product });
-        }
+          self.update = function (product) {
+              $.ajax({ type: "PUT", url: baseUri + '/' + product.Id, data: product });
+          }
 
-        self.remove = function (product) {
-            // First remove from the server, then from the view-model.
-            $.ajax({ type: "DELETE", url: baseUri + '/' + product.Id })
-                .done(function () { self.products.remove(product); });
-        }
+          self.remove = function (product) {
+              // First remove from the server, then from the UI
+              $.ajax({ type: "DELETE", url: baseUri + '/' + product.Id })
+                  .done(function () { self.products.remove(product); });
+          }
 
-        $.getJSON(baseUri, self.products);
+          $.getJSON(baseUri, self.products);
+      }
 
-        $(document).ready(function () {
-            ko.applyBindings(new ProductsViewModel());
-        })
-    }
-</script>
+      $(document).ready(function () {
+          ko.applyBindings(new ProductsViewModel());
+      })
+    </script>
 }
 
 <h2>Admin</h2>
@@ -76,7 +72,7 @@
 
     <div class="float-right">
         <h2>Add New Product</h2>
-        <form id="addProduct" data-bind="submit: create">
+        <form id="product" data-bind="submit: create">
             @Html.ValidationSummary(true)
             <fieldset>
                 <legend>Contact</legend>
