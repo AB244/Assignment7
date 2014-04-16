@@ -15,8 +15,11 @@ namespace Assignment7.Models
 
         public OrdersContext() : base("name=OrdersContext")
         {
+
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

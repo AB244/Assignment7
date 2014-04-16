@@ -23,6 +23,9 @@ namespace Assignment7
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            System.Data.Entity.Database.SetInitializer(
+            new Assignment7.Models.OrdersContextInitializer());
         }
     }
 }
