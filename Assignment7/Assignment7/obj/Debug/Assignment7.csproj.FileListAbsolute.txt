@@ -81,6 +81,5 @@ C:\Users\Alex\Documents\GitHub\Assignment7\Assignment7\Assignment7\bin\ko\System
 C:\Users\Alex\Documents\GitHub\Assignment7\Assignment7\Assignment7\bin\ru\System.Spatial.resources.dll
 C:\Users\Alex\Documents\GitHub\Assignment7\Assignment7\Assignment7\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Alex\Documents\GitHub\Assignment7\Assignment7\Assignment7\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Alex\Documents\GitHub\Assignment7\Assignment7\Assignment7\obj\Debug\Assignment7.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Documents\GitHub\Assignment7\Assignment7\Assignment7\obj\Debug\Assignment7.dll
 C:\Users\Alex\Documents\GitHub\Assignment7\Assignment7\Assignment7\obj\Debug\Assignment7.pdb
